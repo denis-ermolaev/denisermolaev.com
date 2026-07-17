@@ -109,7 +109,7 @@ export function Hero() {
 						className="font-sovngarde mt-6 text-sm md:text-base text-muted-foreground/80 max-w-md leading-relaxed mx-auto md:mx-0"
 					>
 						Интересуюсь веб-разработкой, анализом данных и биоинформатикой. Стремлюсь
-						создавать программы и инструменты, которые решают реальные задачи.
+						создавать полезные программы и инструменты.
 					</motion.p>
 
 					{/* Buttons */}
