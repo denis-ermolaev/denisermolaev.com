@@ -108,8 +108,8 @@ export function Hero() {
 						variants={itemVariants}
 						className="font-sovngarde mt-6 text-sm md:text-base text-muted-foreground/80 max-w-md leading-relaxed mx-auto md:mx-0"
 					>
-						Люблю Python и создаю проекты в веб-разработке, автоматизации и
-						биоинформатике.
+						Интересуюсь веб-разработкой, анализом данных и биоинформатикой. Стремлюсь
+						создавать программы и инструменты, которые решают реальные задачи.
 					</motion.p>
 
 					{/* Buttons */}
