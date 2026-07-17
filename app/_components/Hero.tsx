@@ -165,7 +165,7 @@ export function Hero() {
 						title="Скопировать email"
 					>
 						{copied ? (
-							<Check className="w-3 h-3 opacity-50 hover:opacity-100 text-green-500" />
+							<Check className="w-3 h-3" />
 						) : (
 							<Copy className="w-3 h-3 opacity-50 hover:opacity-100 cursor-pointer" />
 						)}
