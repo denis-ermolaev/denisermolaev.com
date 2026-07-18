@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 		description: "Python-разработчик. Резюме, контакты, портфолио.",
 		url: "https://denisermolaev.com",
 		siteName: "denisermolaev.com",
-		images: [{ url: "/og.png", width: 1200, height: 630 }],
+		images: [{ url: "/og.jpg", width: 1200, height: 630 }],
 		locale: "ru_RU",
 		type: "website",
 	},
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 		card: "summary_large_image",
 		title: "Денис Ермолаев",
 		description: "Python-разработчик",
-		images: ["/og.png"],
+		images: ["/og.jpg"],
 	},
 }
 

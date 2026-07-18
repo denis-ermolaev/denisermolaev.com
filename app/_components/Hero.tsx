@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { TypeAnimation } from "react-type-animation"
 import Image from "next/image"
-import { Download, Inbox, Eye, Copy, Check } from "lucide-react"
+import { ExternalLink, Inbox, Eye, Copy, Check } from "lucide-react"
 import { useState } from "react"
 import { SiGithub, SiTelegram } from "react-icons/si"
 import { FaLinkedin } from "react-icons/fa"
@@ -48,7 +48,7 @@ export function Hero() {
 		<section className="relative h-dvh flex flex-col items-center justify-center overflow-hidden">
 			{/* Background layer */}
 			<div className="absolute inset-0 -z-10">
-				<Image src="/header.png" alt="" fill className="object-cover opacity-10" priority />
+				<Image src="/header.jpg" alt="" fill className="object-cover opacity-10" priority />
 				<div className="absolute inset-0 bg-linear-to-b from-background/0 via-background/50 to-background" />
 			</div>
 
@@ -64,7 +64,7 @@ export function Hero() {
 					<div className="absolute -inset-3 rounded-full bg-primary/15 blur-2xl" />
 					<div className="relative">
 						<Image
-							src="/portrait.jpeg"
+							src="/portrait.jpg"
 							alt="Денис Ермолаев"
 							width={200}
 							height={200}
@@ -118,23 +118,26 @@ export function Hero() {
 						className="font-sovngarde mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
 					>
 						<a
-							href="/resume.pdf"
-							download
+							href="/documents/resume.pdf"
+							target="_blank"
+							rel="noopener noreferrer"
 							className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg
 								bg-primary text-primary-foreground text-sm font-medium
 								hover:opacity-90 transition-all
 								shadow-lg shadow-primary/25"
 						>
-							<Download className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
+							<ExternalLink className="w-4 h-4 mb-1 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
 							Резюме (PDF)
 						</a>
 						<a
 							href="https://time-capsule.denisermolaev.com"
+							target="_blank"
+							rel="noopener noreferrer"
 							className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg
 								border border-border text-sm font-medium
 								hover:bg-muted hover:border-primary/30 transition-all"
 						>
-							<Eye className="w-4 h-4 group-hover:rotate-6 transition-transform" />
+							<Eye className="w-4 h-4 mb-1 mr-1 group-hover:animate-ping" />
 							Проект TimeCapsule
 						</a>
 					</motion.div>
@@ -146,15 +149,16 @@ export function Hero() {
 				initial={{ opacity: 0, y: 20 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.6, delay: 1.4 }}
-				className="mt-4 mx-4 flex-wrap md:flex-nowrap justify-center
+				className="font-sovngarde mt-4 mx-4 flex-wrap md:flex-nowrap justify-center
 				gap-x-6 gap-y-3 md:absolute md:bottom-16 flex items-center text-sm text-muted-foreground"
 			>
 				<div className="inline-flex items-center gap-2">
 					<a
 						href="mailto:me@denisermolaev.com"
+						rel="noopener noreferrer"
 						className="inline-flex items-center gap-1.5 hover:text-primary transition-colors"
 					>
-						<Inbox className="w-4 h-4" />
+						<Inbox className="w-4 h-4 mb-1" />
 						Email
 					</a>
 
@@ -165,9 +169,9 @@ export function Hero() {
 						title="Скопировать email"
 					>
 						{copied ? (
-							<Check className="w-3 h-3" />
+							<Check className="w-3 h-3 mb-1" />
 						) : (
-							<Copy className="w-3 h-3 opacity-50 hover:opacity-100 cursor-pointer" />
+							<Copy className="w-3 h-3 mb-1 opacity-50 hover:opacity-100 cursor-pointer" />
 						)}
 					</button>
 				</div>
@@ -177,7 +181,7 @@ export function Hero() {
 					rel="noopener noreferrer"
 					className="inline-flex items-center gap-1.5 hover:text-primary transition-colors duration-300"
 				>
-					<SiTelegram className="w-4 h-4" />
+					<SiTelegram className="w-4 h-4 mb-1" />
 					Telegram
 				</a>
 				<a
@@ -186,7 +190,7 @@ export function Hero() {
 					rel="noopener noreferrer"
 					className="inline-flex items-center gap-1.5 hover:text-primary transition-colors duration-300"
 				>
-					<SiGithub className="w-4 h-4" />
+					<SiGithub className="w-4 h-4 mb-1" />
 					GitHub
 				</a>
 				<a
@@ -195,7 +199,7 @@ export function Hero() {
 					rel="noopener noreferrer"
 					className="inline-flex items-center gap-1.5 hover:text-primary transition-colors duration-300"
 				>
-					<FaLinkedin className="w-4 h-4" />
+					<FaLinkedin className="w-4 h-4 mb-1" />
 					LinkedIn
 				</a>
 			</motion.div>
