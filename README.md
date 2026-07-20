@@ -14,7 +14,7 @@
 
 - 🌐 [Сайт](https://denisermolaev.com/)
 
-## 🧩 Стек
+## 🛠️ Стек
 
 - **Next.js 16** (App Router, статический экспорт) + **React 19** + **TypeScript**
 - **Tailwind CSS v4** (CSS-first конфигурация) + **shadcn** на **@base-ui/react**

@@ -1,4 +1,4 @@
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import { sovngarde } from "./fonts"
 import "./globals.css"
@@ -16,7 +16,8 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
 	metadataBase: new URL("https://denisermolaev.com"),
 	title: "Денис Ермолаев | Python-разработчик",
-	description: "Личный сайт Дениса Ермолаева — Python-разработчика. Резюме, контакты.",
+	description: "Личный сайт Дениса Ермолаева — Python-разработчика. Резюме, контакты, проекты.",
+	alternates: { canonical: "/" },
 	openGraph: {
 		title: "Денис Ермолаев | Python-разработчик",
 		description: "Python-разработчик. Резюме, контакты, портфолио.",
@@ -34,6 +35,28 @@ export const metadata: Metadata = {
 	},
 }
 
+export const viewport: Viewport = {
+	themeColor: "#0a0a0a",
+	colorScheme: "dark",
+}
+
+const personJsonLd = {
+	"@context": "https://schema.org",
+	"@type": "Person",
+	name: "Денис Ермолаев",
+	url: "https://denisermolaev.com",
+	image: "https://denisermolaev.com/portrait.jpg",
+	jobTitle: "Python-разработчик",
+	email: "mailto:me@denisermolaev.com",
+	description:
+		"Python-разработчик. Интересуюсь веб-разработкой, анализом данных и биоинформатикой.",
+	sameAs: [
+		"https://github.com/denis-ermolaev",
+		"https://www.linkedin.com/in/ermolaev-denis/",
+		"https://t.me/first_millennium",
+	],
+}
+
 export default function RootLayout({
 	children,
 }: Readonly<{
@@ -46,6 +69,12 @@ export default function RootLayout({
 		>
 			<body className="min-h-full flex flex-col">
 				<SmoothScroll />
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{
+						__html: JSON.stringify(personJsonLd).replace(/</g, "\\u003c"),
+					}}
+				/>
 				{children}
 			</body>
 		</html>
