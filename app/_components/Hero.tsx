@@ -3,10 +3,11 @@
 import { motion } from "framer-motion"
 import { TypeAnimation } from "react-type-animation"
 import Image from "next/image"
-import { ExternalLink, Inbox, Copy, Check } from "lucide-react"
+import { ExternalLink, Inbox, Copy, Check, Rocket } from "lucide-react"
 import { useState } from "react"
 import { SiGithub, SiTelegram } from "react-icons/si"
 import { FaLinkedin } from "react-icons/fa"
+import { TbSourceCode } from "react-icons/tb"
 
 const containerVariants = {
 	hidden: { opacity: 0 },
@@ -144,8 +145,19 @@ export function Hero() {
 								border border-border text-sm font-medium
 								hover:bg-muted hover:border-primary/30 transition-all"
 							>
-								<ExternalLink className="w-4 h-4 mb-1 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
-								Проект TimeCapsule
+								<Rocket className="w-4 h-4 mb-1 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
+								Демо Time Capsule
+							</a>
+							<a
+								href="https://github.com/denis-ermolaev/bulls-pipeline"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg
+								border border-border text-sm font-medium
+								hover:bg-muted hover:border-primary/30 transition-all"
+							>
+								<TbSourceCode className="w-4 h-4 mb-1" />
+								Проект Bulls Pipeline
 							</a>
 						</motion.div>
 					</div>
