@@ -1,4 +1,4 @@
-name: Deploy Next.js (static) via SSH password
+name: Deploy Next.js (static) via SSH
 
 on:
     push:
@@ -23,9 +23,11 @@ jobs:
 
             - name: Deploy with password
               env:
-                  SSHPASS: ${{ secrets.SSH_PASSWORD }}
+                  LFTP_PASSWORD: ${{ secrets.SSH_PASSWORD }}
               run: |
-                  sudo apt-get update && sudo apt-get install -y sshpass rsync
-                  sshpass -e rsync -avz --delete \
-                    -e "ssh -p ${{ secrets.SSH_PORT }} -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" \
-                    out/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.TARGET_DIR }}
+                  lftp -u "${{ secrets.SSH_USER }}" -p ${{ secrets.SSH_PORT }} sftp://${{ secrets.SSH_HOST }} <<'EOF'
+                  set sftp:auto-confirm yes
+                  set net:max-retries 2
+                  mirror -R --delete --verbose out/ ${{ secrets.TARGET_DIR }}
+                  bye
+                  EOF
