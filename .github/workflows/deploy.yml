@@ -1,4 +1,4 @@
-name: Deploy Next.js (static) via SSH
+name: Deploy Next.js via FTP
 
 on:
     push:
@@ -6,9 +6,8 @@ on:
     workflow_dispatch:
 
 jobs:
-    build-and-deploy:
+    deploy:
         runs-on: ubuntu-latest
-
         steps:
             - uses: actions/checkout@v4
 
@@ -19,15 +18,12 @@ jobs:
 
             - run: npm ci
             - run: npm run build
-            - run: ls -la out
 
-            - name: Deploy with password
-              env:
-                  LFTP_PASSWORD: ${{ secrets.SSH_PASSWORD }}
-              run: |
-                  lftp -u "${{ secrets.SSH_USER }}" -p ${{ secrets.SSH_PORT }} sftp://${{ secrets.SSH_HOST }} <<'EOF'
-                  set sftp:auto-confirm yes
-                  set net:max-retries 2
-                  mirror -R --delete --verbose out/ ${{ secrets.TARGET_DIR }}
-                  bye
-                  EOF
+            - name: FTP Deploy
+              uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+              with:
+                  server: ${{ secrets.FTP_SERVER }}
+                  username: ${{ secrets.FTP_USERNAME }}
+                  password: ${{ secrets.FTP_PASSWORD }}
+                  server-dir: /home/s1223901/domains/denisermolaev.com/public_html/
+                  local-dir: ./out/
