@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { TypeAnimation } from "react-type-animation"
 import Image from "next/image"
-import { ExternalLink, Inbox, Eye, Copy, Check } from "lucide-react"
+import { ExternalLink, Inbox, Copy, Check } from "lucide-react"
 import { useState } from "react"
 import { SiGithub, SiTelegram } from "react-icons/si"
 import { FaLinkedin } from "react-icons/fa"
@@ -144,7 +144,7 @@ export function Hero() {
 								border border-border text-sm font-medium
 								hover:bg-muted hover:border-primary/30 transition-all"
 							>
-								<Eye className="w-4 h-4 mb-1 mr-1 group-hover:animate-ping" />
+								<ExternalLink className="w-4 h-4 mb-1 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
 								Проект TimeCapsule
 							</a>
 						</motion.div>

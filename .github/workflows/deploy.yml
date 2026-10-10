@@ -1,0 +1,31 @@
+name: Deploy Next.js (static) via SSH password
+
+on:
+    push:
+        branches: [main]
+    workflow_dispatch:
+
+jobs:
+    build-and-deploy:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v4
+
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 22
+                  cache: npm
+
+            - run: npm ci
+            - run: npm run build
+            - run: ls -la out
+
+            - name: Deploy with password
+              env:
+                  SSHPASS: ${{ secrets.SSH_PASSWORD }}
+              run: |
+                  sudo apt-get update && sudo apt-get install -y sshpass rsync
+                  sshpass -e rsync -avz --delete \
+                    -e "ssh -p ${{ secrets.SSH_PORT }} -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" \
+                    out/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.TARGET_DIR }}
