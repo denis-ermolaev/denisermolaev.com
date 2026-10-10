@@ -2,7 +2,7 @@ name: Deploy Next.js via FTP
 
 on:
     push:
-        branches: [main]
+        branches: [master]
     workflow_dispatch:
 
 jobs:
@@ -10,6 +10,11 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
+              with:
+                  lfs: true
+
+            - name: Pull LFS objects
+              run: git lfs pull
 
             - uses: actions/setup-node@v4
               with:
