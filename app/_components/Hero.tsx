@@ -167,7 +167,7 @@ export function Hero() {
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, delay: 1.4 }}
-					className="font-sovngarde mt-4 mx-4 flex-wrap md:flex-nowrap justify-center
+					className="font-sovngarde mt-6 mx-4 flex-wrap md:flex-nowrap justify-center
 				gap-x-6 gap-y-3 md:absolute md:bottom-16 flex items-center text-sm text-muted-foreground"
 				>
 					<div className="inline-flex items-center gap-2">
