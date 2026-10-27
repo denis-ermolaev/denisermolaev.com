@@ -237,7 +237,7 @@ export function Hero() {
 							LinkedIn
 						</a>
 					</div>
-					<div className="mt-6 flex flex-col items-center justify-center gap-2 text-center text-xs leading-relaxed text-muted-foreground/80 sm:text-sm">
+					<div className="mt-6 flex flex-col items-center justify-center gap-2 text-center text-sm leading-relaxed text-muted-foreground/80">
 						<p>Индивидуальный предприниматель Ермолаев Д.В.</p>
 						<p>ОГРНИП: 326723200115965 ИНН: 722201039941</p>
 					</div>
