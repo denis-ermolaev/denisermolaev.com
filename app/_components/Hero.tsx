@@ -47,7 +47,7 @@ export function Hero() {
 	}
 	return (
 		<main>
-			<section className="relative min-h-dvh flex flex-col items-center justify-center">
+			<section className="relative min-h-dvh flex flex-col items-center justify-center overflow-clip">
 				{/* Background layer */}
 				<div className="absolute inset-0 -z-10">
 					<Image
