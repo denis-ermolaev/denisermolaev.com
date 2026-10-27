@@ -65,18 +65,21 @@ export function Hero() {
 					variants={containerVariants}
 					initial="hidden"
 					animate="visible"
-					className="flex flex-col md:flex-row items-center gap-10 md:gap-16 px-4 max-w-5xl mx-auto w-full"
+					className="flex flex-1 flex-col items-center justify-center gap-8 md:gap-10 px-4 py-8 sm:py-10 max-w-5xl mx-auto w-full md:flex-row md:justify-start lg:gap-12 lg:py-12 xl:gap-16"
 				>
 					{/* Photo with glow */}
-					<motion.div variants={itemVariants} className="relative shrink-0 p-4 md:p-8">
-						<div className="absolute -inset-3 rounded-full bg-primary/15 blur-2xl" />
+					<motion.div
+						variants={itemVariants}
+						className="relative shrink-0 p-3 sm:p-4 md:p-6"
+					>
+						<div className="absolute -inset-2 sm:-inset-3 rounded-full bg-primary/15 blur-2xl" />
 						<div className="relative">
 							<Image
 								src="/portrait.jpg"
 								alt="Денис Ермолаев"
 								width={200}
 								height={200}
-								className="rounded-full border-2 border-primary/30 object-cover w-[160px] h-[160px] md:w-[200px] md:h-[200px]"
+								className="rounded-full border-2 border-primary/30 object-cover w-36 h-36 sm:w-40 sm:h-40 md:w-44 md:h-44 lg:w-48 lg:h-48"
 								priority
 							/>
 						</div>
@@ -87,13 +90,13 @@ export function Hero() {
 						{/* Name */}
 						<motion.h1
 							variants={itemVariants}
-							className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-primary leading-tight"
+							className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-primary leading-tight"
 						>
 							Денис Ермолаев
 						</motion.h1>
 
 						{/* Profession — typing animation */}
-						<motion.div variants={itemVariants} className="mt-3 h-8">
+						<motion.div variants={itemVariants} className="mt-4 min-h-8 md:min-h-9">
 							<TypeAnimation
 								sequence={[
 									"Python-разработчик",
@@ -106,7 +109,7 @@ export function Hero() {
 								wrapper="p"
 								speed={40}
 								repeat={Infinity}
-								className="font-sovngarde text-lg md:text-xl text-muted-foreground"
+								className="font-sovngarde text-base sm:text-lg md:text-xl text-muted-foreground"
 								cursor={true}
 							/>
 						</motion.div>
@@ -114,48 +117,57 @@ export function Hero() {
 						{/* Short about */}
 						<motion.p
 							variants={itemVariants}
-							className="font-sovngarde mt-6 text-sm md:text-base text-muted-foreground/80 max-w-md leading-relaxed mx-auto md:mx-0"
+							className="font-sovngarde mt-6 text-sm sm:text-base text-muted-foreground/80 max-w-md leading-relaxed mx-auto md:mx-0"
 						>
-							Стремлюсь создавать полезные программы и инструменты.
+							Стремлюсь создавать полезные приложения и инструменты.
 						</motion.p>
 
 						{/* Buttons */}
 						<motion.div
 							variants={itemVariants}
-							className="font-sovngarde mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+							className="font-sovngarde mt-8 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap sm:gap-4 md:justify-start"
 						>
 							<a
 								href="/documents/resume.pdf"
 								target="_blank"
 								rel="noopener noreferrer"
-								className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg
+								className="group inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-transparent px-5 py-3 sm:px-6
 								bg-primary text-primary-foreground text-sm font-medium
 								hover:opacity-90 transition-all
-								shadow-lg shadow-primary/25"
+								shadow-lg shadow-primary/25
+								focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
 							>
-								<ExternalLink className="w-4 h-4 mb-1 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
+								<ExternalLink
+									aria-hidden="true"
+									className="w-4 h-4 shrink-0 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform"
+								/>
 								Резюме (PDF)
 							</a>
 							<a
 								href="https://time-capsule.denisermolaev.com"
 								target="_blank"
 								rel="noopener noreferrer"
-								className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg
+								className="group inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-5 py-3 sm:px-6
 								border border-border text-sm font-medium
-								hover:bg-muted hover:border-primary/30 transition-all"
+								hover:bg-muted hover:border-primary/30 transition-all
+								focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
 							>
-								<Rocket className="w-4 h-4 mb-1 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
+								<Rocket
+									aria-hidden="true"
+									className="w-4 h-4 shrink-0 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform"
+								/>
 								Демо Time Capsule
 							</a>
 							<a
 								href="https://github.com/denis-ermolaev/bulls-pipeline"
 								target="_blank"
 								rel="noopener noreferrer"
-								className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg
+								className="group inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-5 py-3 sm:px-6
 								border border-border text-sm font-medium
-								hover:bg-muted hover:border-primary/30 transition-all"
+								hover:bg-muted hover:border-primary/30 transition-all
+								focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
 							>
-								<TbSourceCode className="w-4 h-4 mb-1" />
+								<TbSourceCode aria-hidden="true" className="w-4 h-4 shrink-0" />
 								Проект Bulls Pipeline
 							</a>
 						</motion.div>
@@ -167,29 +179,33 @@ export function Hero() {
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, delay: 1.4 }}
-					className="font-sovngarde mt-6 mx-4 md:absolute md:bottom-16 text-sm text-muted-foreground"
+					className="mt-8 shrink-0 px-4 pb-6 font-sovngarde text-sm text-muted-foreground sm:mt-10 sm:px-6 sm:pb-8 sm:text-base lg:mt-12 lg:px-8 lg:pb-10"
 				>
-					<div className="flex items-center flex-wrap md:flex-nowrap justify-center gap-x-6 gap-y-3">
+					<div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 sm:gap-x-6 sm:gap-y-3">
 						<div className="inline-flex items-center gap-2">
 							<a
 								href="mailto:me@denisermolaev.com"
 								rel="noopener noreferrer"
-								className="inline-flex items-center gap-1.5 hover:text-primary transition-colors"
+								className="inline-flex items-center gap-1.5 py-1 hover:text-primary transition-colors"
 							>
-								<Inbox className="w-4 h-4 mb-1" />
+								<Inbox aria-hidden="true" className="w-4 h-4 shrink-0" />
 								Email
 							</a>
 
 							<button
 								type="button"
 								onClick={copyEmail}
-								className="hover:text-primary transition-colors"
+								className="inline-flex h-6 w-6 items-center justify-center hover:text-primary transition-colors"
 								title="Скопировать email"
+								aria-label={copied ? "Email скопирован" : "Скопировать email"}
 							>
 								{copied ? (
-									<Check className="w-3 h-3 mb-1" />
+									<Check aria-hidden="true" className="w-3 h-3 shrink-0" />
 								) : (
-									<Copy className="w-3 h-3 mb-1 opacity-50 hover:opacity-100 cursor-pointer" />
+									<Copy
+										aria-hidden="true"
+										className="w-3 h-3 shrink-0 opacity-50 hover:opacity-100 cursor-pointer"
+									/>
 								)}
 							</button>
 						</div>
@@ -197,31 +213,31 @@ export function Hero() {
 							href="https://t.me/first_millennium"
 							target="_blank"
 							rel="noopener noreferrer"
-							className="inline-flex items-center gap-1.5 hover:text-primary transition-colors duration-300"
+							className="inline-flex items-center gap-1.5 py-1 hover:text-primary transition-colors duration-300"
 						>
-							<SiTelegram className="w-4 h-4 mb-1" />
+							<SiTelegram aria-hidden="true" className="w-4 h-4 shrink-0" />
 							Telegram
 						</a>
 						<a
 							href="https://github.com/denis-ermolaev"
 							target="_blank"
 							rel="noopener noreferrer"
-							className="inline-flex items-center gap-1.5 hover:text-primary transition-colors duration-300"
+							className="inline-flex items-center gap-1.5 py-1 hover:text-primary transition-colors duration-300"
 						>
-							<SiGithub className="w-4 h-4 mb-1" />
+							<SiGithub aria-hidden="true" className="w-4 h-4 shrink-0" />
 							GitHub
 						</a>
 						<a
 							href="https://www.linkedin.com/in/ermolaev-denis/"
 							target="_blank"
 							rel="noopener noreferrer"
-							className="inline-flex items-center gap-1.5 hover:text-primary transition-colors duration-300"
+							className="inline-flex items-center gap-1.5 py-1 hover:text-primary transition-colors duration-300"
 						>
-							<FaLinkedin className="w-4 h-4 mb-1" />
+							<FaLinkedin aria-hidden="true" className="w-4 h-4 shrink-0" />
 							LinkedIn
 						</a>
 					</div>
-					<div className="flex flex-col items-center flex-wrap md:flex-nowrap text-center justify-center p-4 gap-2 text-sm text-muted-foreground/80">
+					<div className="mt-6 flex flex-col items-center justify-center gap-2 text-center text-xs leading-relaxed text-muted-foreground/80 sm:text-sm">
 						<p>Индивидуальный предприниматель Ермолаев Д.В.</p>
 						<p>ОГРНИП: 326723200115965 ИНН: 722201039941</p>
 					</div>
