@@ -47,7 +47,7 @@ export function Hero() {
 	}
 	return (
 		<main>
-			<section className="relative h-dvh flex flex-col items-center justify-center overflow-hidden">
+			<section className="relative min-h-dvh flex flex-col items-center justify-center">
 				{/* Background layer */}
 				<div className="absolute inset-0 -z-10">
 					<Image
@@ -68,7 +68,7 @@ export function Hero() {
 					className="flex flex-col md:flex-row items-center gap-10 md:gap-16 px-4 max-w-5xl mx-auto w-full"
 				>
 					{/* Photo with glow */}
-					<motion.div variants={itemVariants} className="relative shrink-0">
+					<motion.div variants={itemVariants} className="relative shrink-0 pt-8">
 						<div className="absolute -inset-3 rounded-full bg-primary/15 blur-2xl" />
 						<div className="relative">
 							<Image
@@ -221,10 +221,9 @@ export function Hero() {
 							LinkedIn
 						</a>
 					</div>
-					<div className="flex flex-col items-center flex-wrap md:flex-nowrap justify-center p-4 text-sm text-muted-foreground/80">
+					<div className="flex flex-col items-center flex-wrap md:flex-nowrap text-center justify-center p-4 gap-2 text-sm text-muted-foreground/80">
 						<p>Индивидуальный предприниматель Ермолаев Денис Витальевич</p>
-						<p>ОГРНИП: 326723200115965</p>
-						<p>ИНН: 722201039941</p>
+						<p>ОГРНИП: 326723200115965 ИНН: 722201039941</p>
 					</div>
 				</motion.div>
 			</section>
