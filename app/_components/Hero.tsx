@@ -54,7 +54,7 @@ export function Hero() {
 						src="/header.jpg"
 						alt=""
 						fill
-						className="object-cover opacity-15"
+						className="object-cover opacity-40"
 						priority
 					/>
 					<div className="absolute inset-0 bg-linear-to-b from-background/0 via-background/50 to-background" />
@@ -167,59 +167,65 @@ export function Hero() {
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, delay: 1.4 }}
-					className="font-sovngarde mt-6 mx-4 flex-wrap md:flex-nowrap justify-center
-				gap-x-6 gap-y-3 md:absolute md:bottom-16 flex items-center text-sm text-muted-foreground"
+					className="font-sovngarde mt-6 mx-4 md:absolute md:bottom-16 text-sm text-muted-foreground"
 				>
-					<div className="inline-flex items-center gap-2">
-						<a
-							href="mailto:me@denisermolaev.com"
-							rel="noopener noreferrer"
-							className="inline-flex items-center gap-1.5 hover:text-primary transition-colors"
-						>
-							<Inbox className="w-4 h-4 mb-1" />
-							Email
-						</a>
+					<div className="flex items-center flex-wrap md:flex-nowrap justify-center gap-x-6 gap-y-3">
+						<div className="inline-flex items-center gap-2">
+							<a
+								href="mailto:me@denisermolaev.com"
+								rel="noopener noreferrer"
+								className="inline-flex items-center gap-1.5 hover:text-primary transition-colors"
+							>
+								<Inbox className="w-4 h-4 mb-1" />
+								Email
+							</a>
 
-						<button
-							type="button"
-							onClick={copyEmail}
-							className="hover:text-primary transition-colors"
-							title="Скопировать email"
+							<button
+								type="button"
+								onClick={copyEmail}
+								className="hover:text-primary transition-colors"
+								title="Скопировать email"
+							>
+								{copied ? (
+									<Check className="w-3 h-3 mb-1" />
+								) : (
+									<Copy className="w-3 h-3 mb-1 opacity-50 hover:opacity-100 cursor-pointer" />
+								)}
+							</button>
+						</div>
+						<a
+							href="https://t.me/first_millennium"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="inline-flex items-center gap-1.5 hover:text-primary transition-colors duration-300"
 						>
-							{copied ? (
-								<Check className="w-3 h-3 mb-1" />
-							) : (
-								<Copy className="w-3 h-3 mb-1 opacity-50 hover:opacity-100 cursor-pointer" />
-							)}
-						</button>
+							<SiTelegram className="w-4 h-4 mb-1" />
+							Telegram
+						</a>
+						<a
+							href="https://github.com/denis-ermolaev"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="inline-flex items-center gap-1.5 hover:text-primary transition-colors duration-300"
+						>
+							<SiGithub className="w-4 h-4 mb-1" />
+							GitHub
+						</a>
+						<a
+							href="https://www.linkedin.com/in/ermolaev-denis/"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="inline-flex items-center gap-1.5 hover:text-primary transition-colors duration-300"
+						>
+							<FaLinkedin className="w-4 h-4 mb-1" />
+							LinkedIn
+						</a>
 					</div>
-					<a
-						href="https://t.me/first_millennium"
-						target="_blank"
-						rel="noopener noreferrer"
-						className="inline-flex items-center gap-1.5 hover:text-primary transition-colors duration-300"
-					>
-						<SiTelegram className="w-4 h-4 mb-1" />
-						Telegram
-					</a>
-					<a
-						href="https://github.com/denis-ermolaev"
-						target="_blank"
-						rel="noopener noreferrer"
-						className="inline-flex items-center gap-1.5 hover:text-primary transition-colors duration-300"
-					>
-						<SiGithub className="w-4 h-4 mb-1" />
-						GitHub
-					</a>
-					<a
-						href="https://www.linkedin.com/in/ermolaev-denis/"
-						target="_blank"
-						rel="noopener noreferrer"
-						className="inline-flex items-center gap-1.5 hover:text-primary transition-colors duration-300"
-					>
-						<FaLinkedin className="w-4 h-4 mb-1" />
-						LinkedIn
-					</a>
+					<div className="flex flex-col items-center flex-wrap md:flex-nowrap justify-center p-4 text-sm text-muted-foreground/80">
+						<p>Индивидуальный предприниматель Ермолаев Денис Витальевич</p>
+						<p>ОГРНИП: 326723200115965</p>
+						<p>ИНН: 722201039941</p>
+					</div>
 				</motion.div>
 			</section>
 		</main>
