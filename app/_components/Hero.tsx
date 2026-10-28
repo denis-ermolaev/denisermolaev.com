@@ -65,7 +65,7 @@ export function Hero() {
 					variants={containerVariants}
 					initial="hidden"
 					animate="visible"
-					className="flex flex-1 flex-col items-center justify-center gap-8 md:gap-10 px-4 py-8 sm:py-10 max-w-5xl mx-auto w-full md:flex-row md:justify-start lg:gap-12 lg:py-12 xl:gap-16"
+					className="flex flex-1 flex-col items-center justify-center gap-8 md:gap-10 px-4 py-2 sm:py-10 max-w-5xl mx-auto w-full md:flex-row md:justify-start lg:gap-12 lg:py-12 xl:gap-16"
 				>
 					{/* Photo with glow */}
 					<motion.div
@@ -179,7 +179,7 @@ export function Hero() {
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, delay: 1.4 }}
-					className="mt-8 shrink-0 px-4 pb-6 font-sovngarde text-sm text-muted-foreground sm:mt-10 sm:px-6 sm:pb-8 sm:text-base lg:mt-12 lg:px-8 lg:pb-10"
+					className="mt-4 shrink-0 px-4 pb-2 font-sovngarde text-sm text-muted-foreground sm:mt-10 sm:px-6 sm:pb-8 sm:text-base lg:mt-12 lg:px-8 lg:pb-10 m-0 p-0"
 				>
 					<div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 sm:gap-x-6 sm:gap-y-3">
 						<div className="inline-flex items-center gap-2">
@@ -238,7 +238,7 @@ export function Hero() {
 						</a>
 					</div>
 					<div className="mt-6 flex flex-col items-center justify-center gap-2 text-center text-sm leading-relaxed text-muted-foreground/80">
-						<p>Индивидуальный предприниматель Ермолаев Д.В.</p>
+						<p>Индивидуальный предприниматель Ермолаев Д. В.</p>
 						<p>ОГРНИП: 326723200115965 ИНН: 722201039941</p>
 					</div>
 				</motion.div>
